@@ -18,7 +18,7 @@ ChartJS.register(
   CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend
 );
 
-const API_URL = 'http://localhost:8001/forecast';
+const FORECAST_API_URL = "https://aqlify-backend.onrender.com/forecast";
 
 const PRODUCT_TYPES = [
   // Pharmaceutical & Medical
@@ -175,7 +175,7 @@ function ForecastingTool({ onLogout, userType }) {
     setSuccessMessage('✅ Forecast submitted successfully. Your results will be ready shortly.');
 
     try {
-      const response = await axios.post(API_URL, {
+      const response = await axios.post(FORECAST_API_URL, {
         product_type: productType,
         region: region,
         selling_point: sellingPoint || 'Other',
